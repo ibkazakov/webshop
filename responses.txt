@@ -1,0 +1,163 @@
+I.
+GET http://localhost:8080/jsf-web-app/apiProduct/products/all
+
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Type: application/json
+Content-Length: 597
+Date: Sun, 09 Feb 2020 12:13:19 GMT
+
+[
+  {
+    "description": "Desc1",
+    "id": 273,
+    "name": "Product1",
+    "price": 14.00
+  },
+  {
+    "description": "Desc3",
+    "id": 275,
+    "name": "Product3",
+    "price": 1030.00
+  },
+  {
+    "description": "Desc4",
+    "id": 276,
+    "name": "Product4",
+    "price": 140.00
+  },
+  {
+    "description": "Desc5",
+    "id": 277,
+    "name": "Product5",
+    "price": 10.00
+  },
+  {
+    "description": "Desc6",
+    "id": 278,
+    "name": "Product6",
+    "price": 172.00
+  },
+  {
+    "description": "Desc7",
+    "id": 279,
+    "name": "Product7",
+    "price": 1090.00
+  },
+  {
+    "description": "Desc8",
+    "id": 280,
+    "name": "Product8",
+    "price": 247.00
+  },
+  {
+    "description": "Desc9",
+    "id": 281,
+    "name": "Product9",
+    "price": 147.00
+  },
+  {
+    "description": "Desc2",
+    "id": 274,
+    "name": "Product2rr",
+    "price": 102.00
+  }
+]
+
+II.
+DELETE http://localhost:8080/jsf-web-app/apiProduct/products/280/id
+
+HTTP/1.1 204 No Content
+Date: Sun, 09 Feb 2020 12:19:23 GMT
+
+<Response body is empty>
+
+Response code: 204 (No Content); Time: 102ms; Content length: 0 bytes
+
+III.
+PUT http://localhost:8080/jsf-web-app/apiProduct/products/new
+
+HTTP/1.1 204 No Content
+Date: Sun, 09 Feb 2020 12:21:04 GMT
+
+<Response body is empty>
+
+Response code: 204 (No Content); Time: 270ms; Content length: 0 bytes
+
+IV.
+POST http://localhost:8080/jsf-web-app/apiProduct/products/update
+
+HTTP/1.1 204 No Content
+Date: Sun, 09 Feb 2020 12:26:28 GMT
+
+<Response body is empty>
+
+Response code: 204 (No Content); Time: 177ms; Content length: 0 bytes
+
+V.
+GET http://localhost:8080/jsf-web-app/apiProduct/products/all
+
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Type: application/json
+Content-Length: 618
+Date: Sun, 09 Feb 2020 12:28:45 GMT
+
+[
+  {
+    "description": "Desc1",
+    "id": 273,
+    "name": "Product1",
+    "price": 14.00
+  },
+  {
+    "description": "Desc4",
+    "id": 276,
+    "name": "Product4",
+    "price": 140.00
+  },
+  {
+    "description": "Desc5",
+    "id": 277,
+    "name": "Product5",
+    "price": 10.00
+  },
+  {
+    "description": "Desc6",
+    "id": 278,
+    "name": "Product6",
+    "price": 172.00
+  },
+  {
+    "description": "Desc7",
+    "id": 279,
+    "name": "Product7",
+    "price": 1090.00
+  },
+  {
+    "description": "Desc9",
+    "id": 281,
+    "name": "Product9",
+    "price": 147.00
+  },
+  {
+    "description": "Desc2",
+    "id": 274,
+    "name": "Product2rr",
+    "price": 102.00
+  },
+  {
+    "description": "rest created",
+    "id": 282,
+    "name": "product_rest",
+    "price": 1000.76
+  },
+  {
+    "description": "redescripted",
+    "id": 275,
+    "name": "275_updated",
+    "price": 275.75
+  }
+]
+
+Response code: 200 (OK); Time: 34ms; Content length: 618 bytes

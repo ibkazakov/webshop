@@ -1,0 +1,13 @@
+# Go to link for more info https://docs.jboss.org/author/display/AS71/CLI+Recipes#CLIRecipes-ScriptedConfiguration
+
+# 1. creating datasource section in standalone.xml config
+data-source add \
+    --jndi-name=java:/jboss/datasources/product_db \
+    --name=product_db \
+    --connection-url=jdbc:postgresql://localhost:5432/product_db?createDatabaseIfNotExist=true \
+    --driver-name=postgres \
+    --user-name=postgres \
+    --password=postgres
+
+# 2. restarting Wildfly server
+:reload

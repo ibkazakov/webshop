@@ -1,0 +1,69 @@
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"/>
+    <title>Catalog</title>
+</h:head>
+<h:body>
+
+    <f:event listener="${productController.preload}" type="preRenderView" />
+
+
+    <h1>Каталог товаров</h1>
+
+<div class="container">
+<div class="col-12">
+
+<h:form id="addForm">
+   <h:dataTable value="#{productController.preloadedList}"
+                var="current_product" styleClass="table table-bordered my-2" id="productTable">
+       <h:column>
+           <f:facet name="header">Id</f:facet>
+           #{current_product.id}
+       </h:column>
+       <h:column>
+           <f:facet name="header">Name</f:facet>
+           <h:link outcome="/pages/product.xhtml">
+               <f:param name="id" value="#{current_product.id}"/>
+               <f:param name="name" value="#{current_product.name}"/>
+               <f:param name="description" value="#{current_product.description}"/>
+               <f:param name="price" value="#{current_product.price}"/>
+               #{current_product.name}
+           </h:link>
+       </h:column>
+       <h:column>
+           <f:facet name="header">Description</f:facet>
+            #{current_product.description}
+       </h:column>
+       <h:column>
+           <f:facet name="header">Price</f:facet>
+           #{current_product.price}
+       </h:column>
+       <h:column>
+           <f:facet name="header">Actions</f:facet>
+
+           <h:commandButton styleClass="btn btn-success" value="Добавить в корзину"
+                            action="#{cartController.addProduct(current_product)}">
+               <f:ajax event="click" render="addForm"/>
+           </h:commandButton>
+
+       </h:column>
+   </h:dataTable>
+    </h:form>
+
+
+</div>
+</div>
+
+
+    <ui:include src="navigation.xhtml" />
+</h:body>
+</html>

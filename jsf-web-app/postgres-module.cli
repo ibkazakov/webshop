@@ -1,0 +1,14 @@
+# Go to link for more info https://docs.jboss.org/author/display/AS71/CLI+Recipes#CLIRecipes-ScriptedConfiguration
+
+# 1. creating the mysql module in JBOSS_HOME/modules/mysql
+# put here correct path to your MySQL connection driver
+module add \
+   --name=org.postgres \
+   --dependencies=javax.api,javax.transaction.api \
+   --resources=postgres/postgresql-9.3-1100-jdbc4.jar
+
+/subsystem=datasources/jdbc-driver=postgres:add(driver-name="postgres",driver-module-name="org.postgres",driver-class-name=org.postgresql.Driver)
+
+
+# 3. restarting Wildfly server
+:reload

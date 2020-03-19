@@ -1,0 +1,91 @@
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"/>
+    <title>ToDo list application</title>
+</h:head>
+
+
+<h:body id="allPage">
+
+    <f:event listener="${productController.preload}" type="preRenderView" />
+
+
+    <h1>Редактирование каталога товаров</h1>
+
+    <div class="container">
+        <div class="col-12">
+            <h:form id="productsForm">
+                <h:dataTable value="#{productController.preloadedList}"
+                             var="current_product" styleClass="table table-bordered my-2" id="productTable">
+                    <h:column>
+                        <f:facet name="header">Id</f:facet>
+                        #{current_product.id}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Name</f:facet>
+                        #{current_product.name}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Description</f:facet>
+                        #{current_product.description}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Price</f:facet>
+                        #{current_product.price}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Actions</f:facet>
+                        <h:commandButton value="Редактировать" styleClass="btn btn-success"
+                                         action="#{productController.editProduct(current_product)}"/>
+                        <h:commandButton value="Удалить" styleClass="btn btn-danger"
+                                         action="#{productController.delete(current_product)}">
+                            <f:ajax event="click" render="productsForm" />
+                        </h:commandButton>
+                    </h:column>
+                </h:dataTable>
+            </h:form>
+        </div>
+    </div>
+
+    <div class="container">
+    <div class="row py-2">
+    <div class="col-12">
+        <h:form id="createForm">
+
+            <h:commandButton action="#{productController.createProduct()}" value="Создать" >
+                <f:ajax event="click" render="productsForm" />
+            </h:commandButton>
+        </h:form>
+    </div>
+    </div>
+    </div>
+
+    <div class="container">
+        <div class="row py-2">
+            <div class="col-12">
+                <h:form id="initForm">
+
+                    <h:commandButton action="#{productController.defaultValues()}" value="Заполнить значениями по умолчанию" >
+                        <f:ajax event="click" render="productsForm" />
+                    </h:commandButton>
+                </h:form>
+            </div>
+        </div>
+    </div>
+
+
+
+</h:body>
+</html>

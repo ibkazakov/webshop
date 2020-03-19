@@ -1,0 +1,52 @@
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"/>
+    <title>ToDo list application</title>
+</h:head>
+
+<h:body>
+
+    <f:event listener="${shopLoggerController.preload}" type="preRenderView" />
+
+    <h1>Лог событий</h1>
+
+    <div class="container">
+    <div class="col-12">
+        <h:dataTable value= "#{shopLoggerController.preloadedList}"
+                     var="logMessage" styleClass="table my-2" id="logTable">
+            <h:column>
+                #{logMessage.message}
+            </h:column>
+
+            <h:column>
+                #{logMessage.dataTime}
+            </h:column>
+        </h:dataTable>
+
+    </div>
+    </div>
+
+    <h:form id="clearForm">
+
+        <h:commandButton value="Очистить историю" action="#{shopLoggerController.deleteAll()}" styleClass="btn btn-success">
+            <f:ajax event="click" render="logTable"/>
+        </h:commandButton>
+    </h:form>
+
+
+
+</h:body>
+
+</html>

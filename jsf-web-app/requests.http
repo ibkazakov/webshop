@@ -1,0 +1,34 @@
+GET http://localhost:8080/jsf-web-app/apiProduct/products/all
+
+###
+
+DELETE http://localhost:8080/jsf-web-app/apiProduct/products/280/id
+
+###
+
+PUT http://localhost:8080/jsf-web-app/apiProduct/products/new
+Content-Type: application/json
+
+{
+  "description": "rest created",
+  "name": "product_rest",
+  "price": 1000.76
+}
+
+###
+
+POST http://localhost:8080/jsf-web-app/apiProduct/products/update
+Content-Type: application/json
+
+{
+  "description": "redescripted",
+  "id": 275,
+  "name": "275_updated",
+  "price": 275.75
+}
+
+###
+
+GET http://localhost:8080/jsf-web-app/apiProduct/products/all
+
+###

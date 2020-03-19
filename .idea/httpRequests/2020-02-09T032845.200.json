@@ -1,0 +1,56 @@
+[
+  {
+    "description": "Desc1",
+    "id": 273,
+    "name": "Product1",
+    "price": 14.00
+  },
+  {
+    "description": "Desc4",
+    "id": 276,
+    "name": "Product4",
+    "price": 140.00
+  },
+  {
+    "description": "Desc5",
+    "id": 277,
+    "name": "Product5",
+    "price": 10.00
+  },
+  {
+    "description": "Desc6",
+    "id": 278,
+    "name": "Product6",
+    "price": 172.00
+  },
+  {
+    "description": "Desc7",
+    "id": 279,
+    "name": "Product7",
+    "price": 1090.00
+  },
+  {
+    "description": "Desc9",
+    "id": 281,
+    "name": "Product9",
+    "price": 147.00
+  },
+  {
+    "description": "Desc2",
+    "id": 274,
+    "name": "Product2rr",
+    "price": 102.00
+  },
+  {
+    "description": "rest created",
+    "id": 282,
+    "name": "product_rest",
+    "price": 1000.76
+  },
+  {
+    "description": "redescripted",
+    "id": 275,
+    "name": "275_updated",
+    "price": 275.75
+  }
+]

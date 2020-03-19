@@ -1,0 +1,35 @@
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"/>
+    <title>Catalog</title>
+</h:head>
+<h:body>
+
+    <h1>Оформление заказа</h1>
+
+
+    <h:form id="submitForm">
+        <strong>Общая стоимость товаров в корзине:
+            #{cartController.totalBill()}
+        </strong>
+
+        <br />
+
+        <h:commandButton value="Подтвердить заказ" action="#{cartController.acceptOrder()}" styleClass="btn btn-success">
+            <f:ajax event="click" render="submitForm"/>
+        </h:commandButton>
+    </h:form>
+
+
+    <ui:include src="navigation.xhtml" />
+</h:body>
+</html>

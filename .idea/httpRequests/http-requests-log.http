@@ -1,0 +1,107 @@
+GET http://localhost:8080/jsf-web-app/apiProduct/products/all
+
+<> 2020-02-09T032845.200.json
+
+###
+
+POST http://localhost:8080/jsf-web-app/apiProduct/products/update
+Content-Type: application/json
+
+{
+  "description": "redescripted",
+  "id": 275,
+  "name": "275_updated",
+  "price": 275.75
+}
+
+###
+
+POST http://localhost:8080/base-jsf-app/api/products/update
+Content-Type: application/json
+
+{
+  "description": "redescripted",
+  "id": 275,
+  "name": "275_updated",
+  "price": 275.75
+}
+
+<> 2020-02-09T032611.404.html
+
+###
+
+PUT http://localhost:8080/jsf-web-app/apiProduct/products/new
+Content-Type: application/json
+
+{
+  "description": "rest created",
+  "name": "product_rest",
+  "price": 1000.76
+}
+
+###
+
+DELETE http://localhost:8080/jsf-web-app/apiProduct/products/280/id
+
+###
+
+DELETE http://localhost:8080/base-jsf-app/apiProduct/products/280/id
+
+<> 2020-02-09T031909.405.html
+
+###
+
+DELETE http://localhost:8080/base-jsf-app/api/products/280/id
+
+<> 2020-02-09T031735.405.html
+
+###
+
+DELETE http://localhost:8080/base-jsf-app/api/products/280/id
+
+<> 2020-02-09T031723.405.html
+
+###
+
+GET http://localhost:8080/jsf-web-app/apiProduct/products/all
+
+<> 2020-02-09T031319.200.json
+
+###
+
+GET http://localhost:8080/jsf-web-app/api/products/all
+
+<> 2020-02-09T031017.404.html
+
+###
+
+GET http://localhost:8080/jsf-web-app/productApi/products/all
+
+<> 2020-02-09T030710.404.html
+
+###
+
+GET http://localhost:8080/jsf-web-app/productApi/products/all
+
+<> 2020-02-09T030608.404.html
+
+###
+
+GET http://localhost:8080/jsf-web-app/productApi/products/all
+
+<> 2020-02-09T030512.404.html
+
+###
+
+GET http://localhost:8080/base-jsf-app/productApi/products/all
+
+<> 2020-02-09T030111.404.html
+
+###
+
+GET http://localhost:8080/base-jsf-app/productApi/products/all
+
+<> 2020-02-09T030055.404.html
+
+###
+
